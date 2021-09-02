@@ -1,7 +1,3 @@
-pay = 7000
-time_of_day = 8
-day_of_month = 19
-
 print("시급계산기 프로그램입니다")
 
 pay = input("시급을 입력해 주세요 : ")
