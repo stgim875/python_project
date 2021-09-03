@@ -3,6 +3,7 @@ print("일반 계산기 프로그램입니다!\n\n")
 frist = input("계산할 첫번째 값을 입력해 주세요.\n\n")
 second = input("계산할 두번째 값을 입력해 주세요.\n\n")
 
+# 정수 입력
 frist = int(frist)
 second = int(second)
 
