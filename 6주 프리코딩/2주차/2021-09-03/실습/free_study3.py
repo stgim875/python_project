@@ -22,7 +22,7 @@ elif score >= 30:
     score = "C"
 elif score <= 30:
     score = "D"
-elif score <= 10:
+elif score = 0:
     score = "F"
 else:
     score = "잘못된 입력입니다."
