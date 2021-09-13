@@ -18,6 +18,7 @@ import random
 # print(result)
 # # my_list의 요소들 중 하난를 무작위로 선택
 
+
 print("점심 추천기 프로그램입니다!")
 print('''
 메뉴판
