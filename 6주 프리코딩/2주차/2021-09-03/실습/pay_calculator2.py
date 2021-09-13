@@ -39,6 +39,7 @@ tax = int(tax)
 
 # 세금 적용하기
 
+
 if tax == 2:
     tax_price = profit * 8.41 // 10000
 elif tax == 3:
