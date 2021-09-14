@@ -87,3 +87,20 @@ life/lotto_numbers_creator.py
 while len(lotto_numbers) != 7:
 new_number = random.randrange(1, 46)
 lotto_numbers.append(new_number)
+
+- while문 안에서 난수를 발생합니다.
+- 난수를 리스트에 추가합니다.
+- 리스트의 길이가 7이 될때까지 반복합니다.
+
+#### 중복 검사하기
+
+새로운 숫자가 로또 번호 리스트 안에 있으면 로또 번호 리스트 안에 추가해서는 안됩니다.
+이를 위해 검사하는 방법은 아래와 같습니다.
+
+while len(lotto_numbers) != 7:
+new_number = random.randrange(1, 46)
+if new_number not in lotto_numbers:
+lotto_number.append(new_number)
+
+`!` if new_number not in lotto_numbers는 말 그대로 lotto_nunbers 리스트 안에
+new_number가 없으면 아래의 문장을 실행하라는 것 입니다.
