@@ -3,7 +3,7 @@
 
 print("주민등록 번호 분석기 프로그램입니다!")
 
-resident_number = input("주민번호를 입력해 주세요 :")
+resident_number = input("주민번호를 입력해 주세요 :\n")
 
 # 생년월일 탐색
 birth_year = resident_number[0:2]

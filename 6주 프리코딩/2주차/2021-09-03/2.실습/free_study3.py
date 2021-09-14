@@ -13,17 +13,18 @@ study_score = int(study_score)
 score = test_score + study_score
 score = int(score)
 
-# 조건문s
+# 학점 조건
 if score >= 70:
-    score = "A"
-elif score >= 50:
-    score = "B"
-elif score >= 30:
-    score = "C"
-elif score < 30:
-    score = "D"
-elif score == 0:
-    score = "F"
+    score = 'A'
+elif 50 <= score < 70:
+    score = 'B'
+elif 30 <= score < 50:
+    score = 'C'
+elif 10 < score < 30:
+    score = 'D'
+elif score >= 5 or score == 0:
+    score = 'F'
 else:
-    score = "잘못된 입력입니다."
-print("당신의 점수는 {0}점".format(score))
+    score = '잘못된 입력입니다!'
+
+print("당신의 점수는 {0}점입니다.".format(score))
