@@ -1,5 +1,5 @@
 # 주민등록번호 분석기 프로그램
-# 내가 직접 구현한 코드
+# 모범 답안
 
 print("주민등록번호 분석기 프로그램입니다.")
 
@@ -10,61 +10,62 @@ birth_year = resident_number[0:2]
 birth_month = resident_number[2:4]
 birth_day = resident_number[4:6]
 sex = resident_number[6]
-local_code = resident_number[7:9]
 
 # 생년월일 및 성별 정수 입력
 birth_year = int(birth_year)
 birth_month = int(birth_month)
 birth_day = int(birth_day)
-local_code = int(local_code)
 
-# 성별 조건식
-if sex == '1' or sex == '3':
+# 성별 탐색
+if resident_number[6] == '1' or resident_number[6] == '3':
     sex = '남자'
-elif sex == '2' or sex == '4':
+elif resident_number[6] == '2' or resident_number[6] == '4':
     sex = '여자'
 else:
     sex = '중성'
 
+# 지역 탐색
+local_code = resident_number[7:9]
+local_code = int(local_code)
+
 # 지역 코드 조건식
 if 0 <= local_code <= 8:
-    local_code = '서울특별시'
+    local = '서울특별시'
 elif 9 <= local_code <= 12:
-    local_code = '부산광역시'
+    local = '부산광역시'
 elif 13 <= local_code <= 15:
-    local_code = '인천광역시'
+    local = '인천광역시'
 elif 16 <= local_code <= 25:
-    local_code = '경기도'
+    local = '경기도'
 elif 26 <= local_code <= 34:
-    local_code = '강원도'
+    local = '강원도'
 elif 35 <= local_code <= 39:
-    local_code = '충청북도'
+    local = '충청북도'
 elif local_code == 40:
-    local_code = '대전광역시'
+    local = '대전광역시'
 elif 41 <= local_code <= 43 or 45 <= local_code <= 47:
-    local_code = '충청남도'
+    local = '충청남도'
 elif local_code == 44 or local_code == 96:
-    local_code = '세종특별시'
+    local = '세종특별시'
 elif 48 <= local_code <= 54:
-    local_code = '전라북도'
+    local = '전라북도'
 elif 55 <= local_code <= 66:
-    local_code = '전라남도'
+    local = '전라남도'
 elif local_code == 55 or local_code == 56:
-    local_code = '광주광역시'
+    local = '광주광역시'
 elif 67 <= local_code <= 70:
-    local_code = '대구광역시'
+    local = '대구광역시'
 elif 71 <= local_code <= 81:
-    local_code = '경상북도'
+    local = '경상북도'
 elif 82 <= local_code <= 84 or 86 <= local_code <= 90:
-    local_code = '경상남도'
+    local = '경상남도'
 elif local_code == 85:
-    local_code = '울산광역시'
-elif 91 <= local_code <= 95:
-    local_code = '제주특별자치도'
+    local = '울산광역시'
 else:
-    error = '잘못된 입력입니다'
+    local = '제주특별자치도'
 
 # 주민번호로부터 정보 출력
-print("생년월일 : {0}년 {1}월 {2}일".format(birth_year, birth_month, birth_day))
-print("성별 : {0}".format(sex))
-print("출생지역 : {0}입니다".format(local_code))
+# print("생년월일 : " + birth_year + "년" + birth_month + "월" + birth_day + "일")
+print("생년월일 : " + birth_year + "년 " + birth_month + "월 " + birth_day + "일 ")
+print("성별 : " + sex)
+print("출생지역 : " + local)
