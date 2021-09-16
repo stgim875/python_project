@@ -25,7 +25,6 @@ while len(lotto_numbers) != 7:
     if new_number not in lotto_numbers:
         lotto_numbers.append(new_number)
 
-
 print('''
 랜덤 로또 발생기입니다.
 당첨 번호 : {0}번, {1}번, {2}번, {3}번, {4}번, {5}번
