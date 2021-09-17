@@ -14,12 +14,14 @@ lotto_numbers.append(random.randrange(1, 46))
 lotto_numbers.append(random.randrange(1, 46))
 lotto_numbers.append(random.randrange(1, 46))
 
-# while문 사용하기
-while len(lotto_numbers) != 7:
-    new_number = random.randrange(1, 46)
-    lotto_numbers.append(new_number)
+# # while문 사용하기
+#
+# while len(lotto_numbers) != 7:
+#     new_number = random.randrange(1, 46)
+#     lotto_numbers.append(new_number)
 
 # 중복 검사하기
+#
 while len(lotto_numbers) != 7:
     new_number = random.randrange(1, 46)
     if new_number not in lotto_numbers:
