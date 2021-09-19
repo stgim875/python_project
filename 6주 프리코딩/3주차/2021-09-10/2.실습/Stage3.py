@@ -15,13 +15,13 @@ lotto_numbers.append(random.randrange(1, 46))
 lotto_numbers.append(random.randrange(1, 46))
 
 # # while문 사용하기
-#
-# while len(lotto_numbers) != 7:
-#     new_number = random.randrange(1, 46)
-#     lotto_numbers.append(new_number)
+# 로또 번호 중복 제거하기
+while len(lotto_numbers) != 7:
+    new_number = random.randrange(1, 46)
+    lotto_numbers.append(new_number)
 
 # 중복 검사하기
-#
+# 새로운 숫자가 로또 번호 리스트 안에 있으면 로또 번호 리스트 안에 추가해서는 안됨, 이를 위한 코드는 아래와 같다.
 while len(lotto_numbers) != 7:
     new_number = random.randrange(1, 46)
     if new_number not in lotto_numbers:
