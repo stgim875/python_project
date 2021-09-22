@@ -9,7 +9,7 @@ i = [0,1,2,3,4]
 for item in i:
     print('Hello')
 
-# i 변수를 제거하고 in 뒤에 컨테이너를 입력해서 사용할 수 있다.
+# # i 변수를 제거하고 in 뒤에 컨테이너를 입력해서 사용할 수 있다.
 for item in [0,1,2,3,4]:
     print('Hello')
 
