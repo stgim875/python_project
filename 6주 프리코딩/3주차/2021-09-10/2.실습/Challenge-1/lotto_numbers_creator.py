@@ -17,9 +17,9 @@ print('''
 당첨 번호 : {0}, {1}, {2}, {3}, {4}, {5}
 2등 보너스 볼 : {6}
 '''.format(lotto_numbers[0],
-20 lotto_numbers[1],
-21 lotto_numbers[2],
-22 lotto_numbers[3],
-23 lotto_numbers[4],
-24 lotto_numbers[5],
-25 lotto_numbers[6]))
+           lotto_numbers[1],
+           lotto_numbers[2],
+           lotto_numbers[3],
+           lotto_numbers[4],
+           lotto_numbers[5],
+           lotto_numbers[6]))
