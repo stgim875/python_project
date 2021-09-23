@@ -10,7 +10,7 @@ subject_name = list()
 subject_score = list()
 subject_grade = list()
 
-# 
+#
 while len(subject_name) != number_of_subject:
     subject_name.append(input("과목명을 입력해주세요 :"))
     subject_score.append(input("당신의 점수를 입력해주세요 :"))
@@ -78,9 +78,10 @@ elif calculating_way == '2':
         score += 0
     else:
         amount_of_grade -= grade
+
 else:
     print("잘못된 연산 방법입니다. 프로그램을 종료합니다.")
-    break # 코드 실행시 위치가 여기가 아니라고 출력됨.
+    break  # 코드 실행시 위치가 여기가 아니라고 출력됨.
 
 print('''
 당신이 이번학기 들었던 총 학점 : {0}
