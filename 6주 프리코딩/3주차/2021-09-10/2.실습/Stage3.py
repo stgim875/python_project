@@ -15,7 +15,8 @@ lotto_numbers.append(random.randrange(1, 46))
 lotto_numbers.append(random.randrange(1, 46))
 
 # # while문 사용하기
-# 로또 번호 중복 제거하기
+# 로또 번호 중복 피하기
+# 리스트에 값이 추가 되거나, 삭제 될 경우, 'len(lotto_numbers)'라고 적혀 있는 값을 리스트에 있는 값이 몇개냐에 따라서 달라지도록 가변적으로 바꿔주는 명령어가 바로 'len'임
 while len(lotto_numbers) != 7:
     new_number = random.randrange(1, 46)
     lotto_numbers.append(new_number)
