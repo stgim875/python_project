@@ -17,12 +17,27 @@ while len(answer) != 4:
     new_number = random.randint(0, 9)
     if new_number not in answer:
         answer.append(new_number)
+
 print(answer)
 
 # 사용자에게 입력 받음
 your_answer = input("답을 맞혀보세요 : ")
 
+strike = 0
+ball = 0
+
 # 스트라이크, 볼 검사
 for index, value in enumerate(your_answer):
     print("index : {0}, value : {1}".format(index, value))
 
+# 값 비교하기
+    if int(value) == answer[index]:
+        strike += 1
+    elif int(value) in answer:
+        ball += 1
+
+# 조건에 따라 출력하기
+if strike == 0 and ball == 0:
+    print("Out!!!!!!!!!!")
+else:
+    print("{0} 스트라이크 {1} 볼입니다".format(strike, ball))
