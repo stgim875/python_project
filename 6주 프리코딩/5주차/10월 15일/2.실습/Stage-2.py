@@ -1,3 +1,4 @@
+# Stage-2 누가 먼저할지 순서정하기
 
 import random
 
