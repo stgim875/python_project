@@ -17,16 +17,81 @@
 서로가 호출을 시행한다는 것은 시행을 하면 할 수록 숫자가 커짐을 의미합니다. 그리고 그 수는 1씩 증가하죠. 그리고 증가하는 과정에서 특징이 있습니다.
 홀수번과 짝수번으로 구분하여 시행하는 사람이 같다는 점이죠. 이를 그림으로 다시 이해해봅시다.
 
-|      서비스명       |                               버전명                               |
-| :-----------------: | :----------------------------------------------------------------: |
-|     `dashboard`     |     repo.iris.tools/iris/dashboard:v3.0.1-RC20210830.0-077f460     |
-|      `cluster`      |      repo.iris.tools/iris/cluster:v3.0.1-RC20210830.0-3a1ebf0      |
-|    `db-browser`     |    repo.iris.tools/iris/db-browser:v3.0.1-RC20210830.0-8a1c911     |
-|   `hdfs-browser`    |   repo.iris.tools/iris/hdfs-browser:v3.0.1-RC20210830.0-36ae81f    |
-|       `jhms`        |             repo.iris.tools/iris/jhms:3.0.2.1_44100f8              |
-|       `meta`        |       repo.iris.tools/iris/meta:v3.0.1-RC20210908.0-61de888        |
-|      `sherman`      |      repo.iris.tools/iris/sherman:v3.0.1-RC20210908.0-d8d7b7f      |
-|      `studio`       |      repo.iris.tools/iris/studio:v3.0.1-RC20210913.0-742e9a7       |
-|   `map-analyzer`    | repo.iris.tools/iris/iris-map-analyzer:v3.0.1-RC20210913.0-df82905 |
-|      `angora`       |      repo.iris.tools/iris/angora:v3.0.1-RC20210914.0-4225633       |
-| `iris-web-platform` | repo.iris.tools/iris/iris-web-platform:v3.0.1-RC20210915.0-a63887c |
+|   시행   |   1    | 2      | 3      | 4      | 5      | 6      | 7      | 8      | 9      | 10     | 11     | 12     |
+| :------: | :----: | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| `시행자` | 사용자 | 컴퓨터 | 사용자 | 컴퓨터 | 사용자 | 컴퓨터 | 사용자 | 컴퓨터 | 사용자 | 컴퓨터 | 사용자 | 컴퓨터 |
+
+우리는 홀수와 짝수만 구분하면 선공과 후공을 정할 수 있다는 이야기가 됩니다. 그래서 사용자로부터 0또는 1을 입력받아 홀수를 대표하는 1을 입력할 시에는
+선공을, 짝수를 대표하는 0을 입력할 시에는 후공이 됩니다.
+
+수학적으로 다시보면, 시행을 2로 나눈 나머지는 언제나 0 또는 1이 되고요. 선공인 차례에는 그 나머지 값이 언제나 1을, 후공인 차례에는 0이 되어서 구분할 수 있습니다.
+
+#### 코딩하기
+
+print("베스킨라빈스 31 게임 프로그램입니다!")
+
+order = input('''순서를 입력하세요. (선공 1, 후공 0, 입력) : ''')
+order = int(order)
+
+call = 0
+count = 1
+
+if count % 2 == order: # 사용자의 차례
+print('사용자의 차례')
+else: # 컴퓨터의 차례
+print('컴퓨터의 차례')
+
+- 사용자에게 0 또는 1을 입력받아서, 숫자로 형변환합니다.
+- 2로 나눈 나머지와 입력받은 값을 비교하여 순서를 구분합니다.
+
+### 번호 호출하기
+
+#### range문 이해하기
+
+우리는 이전까지 for문을 사영하면서, 리스트와 함께 enumerate문을 사용하였습니다. 이번에는 정수 자료형과 함께 사용할 수 있는 range문에 대해 알아보고 이것을 가지고 번호를 호출하겠습니다.
+
+        없으면 '0' 없으면 '1'
+    range(시작, 끝, 공차)
+        (range의 구성)
+
+- 시작으로 설정된 숫자부터 값을 셉니다.
+- 끝으로 설정된 숫자를 제외하고 그 전까지 값을 셉니다.
+- 공차에 따라 시작에서부터 끝으로 값이 변합니다.
+
+아래의 예문을 통해 이해해보겠습니다.
+
+<example>
+
+for value in range(10):
+print(value)
+#0부터 9까지 출력
+#0 1 2 3 4 5 6 7 8 9
+my_list = ['ab', 123, 43.123, 'I love you']
+for index in range(len(my_list)):
+print(index) #리스트의 길이가 4이므로 0부터 3까지 출력
+#0 1 2 3
+for value in range(3, 9):
+print(value)
+#3부터 8까지 출력
+#3 4 5 6 7 8
+for value in range(2, 20, 2):
+print(value)
+#2부터 시작하여 20 전까지 2단위로 출력
+#2 4 6 8 10 12 14 16 18
+for value in range(10, 2, -1):
+print(value)
+#10부터 시작하여 2로 감소하기 전까지 -1 단위로 출력
+#10 9 8 7 6 5 4 3
+
+### 번호 호출하기
+
+사용자의 호출과정에서 range문을 사용하여 호출을 시도합니다. 즉, 사용자로부터 몇 개를 출력할지 입력받고, 입력받은 크기만큼 range문과 반복문을 사용해서 출력해주면 됩니다.
+
+size_of_call = input("호출할 개수를 입력해주세요 : ")
+size_of_call = int(size_of_call)
+
+for \_ in range(size_of_call):
+call += 1
+print("사용자 : '{0}'!!!".format(call))
+
+`i` for문에서 변수의 자리에 언더바 (`_`)가 들어가면 변수를 받지 않겠다는 뜻입니다.
